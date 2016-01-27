@@ -1,12 +1,6 @@
-//
-//  AppDelegate.m
-//  smartview
-//
-//  Created by ND-00316 on 2016/01/27.
-//  Copyright © 2016年 shino-g. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "MainViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -16,6 +10,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    self.window                      = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    MainViewController *mainView     = [[MainViewController alloc] init];
+    mainView.view.backgroundColor    = [UIColor whiteColor];
+    self.window.rootViewController   = mainView;
+    [self.window makeKeyAndVisible];
+
+    
     // Override point for customization after application launch.
     return YES;
 }
