@@ -8,7 +8,7 @@
 - (void)compleatePage;
 @end
 
-@interface MainPageViewController : UIPageViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface MainPageViewController : UIPageViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate,UIGestureRecognizerDelegate>
 
 @property (weak, readwrite) id<MainPageViewDelegate> MainPageViewDelegate;
 

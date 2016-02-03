@@ -13,12 +13,6 @@ static NSString* cellName = @"cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [self editButtonItem];
-    
-    // 普通のテーブルビューセルならこちらを使う
-    //[self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:cellName];
-    //詳細付きのテーブルスタイルを使う場合はこちらを使う。
     [self.tableView registerClass:[NavigationTableViewCell class] forCellReuseIdentifier:cellName];
 }
 
@@ -80,6 +74,7 @@ static NSString* cellName = @"cell";
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
+
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [super setEditing:editing animated:animated];

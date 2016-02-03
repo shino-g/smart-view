@@ -22,7 +22,7 @@
     [self addChildViewController:navigationTable];
     
     //テーブルビューを90度回転
-    navigationTable.tableView.transform  = CGAffineTransformMakeRotation( -M_PI / 2);
+    navigationTable.tableView.transform       = CGAffineTransformMakeRotation( -M_PI / 2);
     navigationTable.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     navigationTable.tableView.showsVerticalScrollIndicator = YES;
     navigationTable.tableView.indicatorStyle  = UIScrollViewIndicatorStyleWhite;
@@ -46,7 +46,9 @@
     pageViewController.dataSource    = pageViewController;
     pageViewController.MainPageViewDelegate = self;
     
-    self.view.gestureRecognizers = pageViewController.gestureRecognizers;
+    
+    [self addChildViewController:pageViewController];
+    
     [self.view addSubview:pageViewController.view];
     
     [self compleatePage];
