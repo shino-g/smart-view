@@ -13,6 +13,13 @@ static NSString* cellName = @"cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //テーブルビューを90度回転
+    self.tableView.transform       = CGAffineTransformMakeRotation( -M_PI / 2);
+    self.view.center = CGPointMake(self.view.frame.origin.x + self.view.frame.size.height / 2, self.view.frame.origin.y + self.view.frame.size.width / 2);
+    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
+    self.tableView.showsVerticalScrollIndicator = YES;
+    self.tableView.allowsSelection = YES;
+    
     [self.tableView registerClass:[NavigationTableViewCell class] forCellReuseIdentifier:cellName];
 }
 

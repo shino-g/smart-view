@@ -1,10 +1,8 @@
 #import <UIKit/UIKit.h>
 
 @protocol MainPageViewDelegate<NSObject>
-
 - (UIViewController *)prevPage;
 - (UIViewController *)nextPage;
-- (void)goPage:(int)i;
 - (void)compleatePage;
 @end
 

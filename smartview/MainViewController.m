@@ -20,35 +20,18 @@
     navigationTable = [[NavigationTableViewController alloc] init];
     navigationTable.NavigationDelegate = self;
     [self addChildViewController:navigationTable];
-    
-    //テーブルビューを90度回転
-    navigationTable.tableView.transform       = CGAffineTransformMakeRotation( -M_PI / 2);
-    navigationTable.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
-    navigationTable.tableView.showsVerticalScrollIndicator = YES;
-    navigationTable.tableView.indicatorStyle  = UIScrollViewIndicatorStyleWhite;
-    navigationTable.tableView.scrollEnabled   = YES;
     navigationTable.tableView.backgroundColor = [UIColor whiteColor];
-    navigationTable.tableView.allowsSelection = YES;
-    navigationTable.view.center = CGPointMake(self.view.frame.origin.x + self.view.frame.size.height / 2, self.view.frame.origin.y + self.view.frame.size.width / 2);
     navigationTable.view.frame  = CGRectMake(0, 20, self.view.frame.size.width, 80);
-    
+
+    [self.view addSubview:navigationTable.view];
     
     modelList             = [[ModelList alloc] init];
     navigationTable.cellList = [modelList getList];
     
-    [self.view addSubview:navigationTable.view];
-    
-    
     pageViewController = [[MainPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    [pageViewController.view setFrame:CGRectMake(0, 80 , self.view.bounds.size.width, self.view.bounds.size.height - 55 )];
-
-    pageViewController.delegate      = pageViewController;
-    pageViewController.dataSource    = pageViewController;
+    pageViewController.view.frame = CGRectMake(0, 80 , self.view.bounds.size.width, self.view.bounds.size.height - 55 );
     pageViewController.MainPageViewDelegate = self;
-    
-    
     [self addChildViewController:pageViewController];
-    
     [self.view addSubview:pageViewController.view];
     
     [self compleatePage];

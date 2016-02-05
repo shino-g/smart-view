@@ -77,7 +77,7 @@
 {
     if ( 0 > item_no - 1 )
     {
-        return [itemList count] -1;
+        return (int)[itemList count] - 1;
     }
     return item_no -1;
 }
