@@ -1,5 +1,7 @@
 # smart-view　スマートニュースっぽい  
 
+OverviewOverviewOverview
+
 スマートニュース風のビューを簡単に作成してみました。  
   
 [tableview-sample](https://github.com/shino-g/tableview-sample)
