@@ -1,6 +1,5 @@
 # smart-view　スマートニュースっぽい  
-
-OverviewOverviewOverview
+==
 
 スマートニュース風のビューを簡単に作成してみました。  
   
